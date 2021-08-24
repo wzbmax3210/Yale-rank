@@ -17,3 +17,78 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.yale-header {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 36rpx;
+  height: 190rpx;
+  padding: 20rpx 34rpx 30rpx;
+  margin: 0;
+  color: #ffffff;
+  background: #706CAA;
+  text-align: center;
+}
+
+.yale-content {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  padding: 0 34rpx;
+}
+
+.top-3-background-color {
+  background: #fff9f3;
+}
+
+.top-1-color {
+  color: #FE2D46;
+}
+
+.top-2-color {
+  color: #FF6600;
+}
+
+.top-3-color {
+  color: #FAA90E;
+}
+
+.title-color {
+  color: #666666;
+}
+
+.rank-wrapper {
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #f6f3f0;
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.rank-sort {
+  width: 10%;
+}
+
+.rank-name {
+  width: 20%;
+}
+
+.rank-point {
+  width: 23%;
+}
+
+.last-rank {
+  width: 22%;
+}
+
+.last-rank-up {
+  color: #F73131;
+}
+.last-rank-down {
+  color: #0EBE98;
+}
+
+.rank-title {
+  width: 25%;
+}
