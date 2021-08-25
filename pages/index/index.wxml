@@ -12,12 +12,46 @@
       <text class="last-rank">最近战绩</text>
       <text class="rank-title">境界</text>
     </view>
-    <view class="rank-wrapper {{ index < 3 ? 'top-3-background-color' : '' }}" wx:for="{{ rankData }}" wx:for-item="item">
-      <text class="rank-sort">{{ index + 1 }}</text>
+    <view
+        class="rank-wrapper {{ index < 3 ? 'top-3-background-color' : '' }}"
+        wx:for="{{ rankData }}"
+        wx:key="name"
+        wx:for-item="item"
+    >
+      <text class="rank-sort {{ index === 0 ? 'top-1-color' : index === 1 ? 'top-2-color' : index === 2 ? 'top-3-color' : '' }}">{{ index + 1 }}</text>
       <text class="rank-name">{{ item.name }}</text>
-      <text class="rank-point">{{ item.rank }}</text>
-      <text class="rank-point">{{ item.lastRank }}</text>
-      <text class="rank-title"></text>
+      <text class="rank-point {{ index === 0 ? 'top-1-color' : index === 1 ? 'top-2-color' : index === 2 ? 'top-3-color' : '' }}">{{ item.rank }}</text>
+      <text class="rank-point {{ item.lastRank > 0 ? 'last-rank-up' : item.lastRank < 0 ? 'last-rank-down' : '' }}">{{ item.lastRank }}</text>
+      <text class="rank-title">{{ item.title }}</text>
+    </view>
+  </view>
+  <view class="match">
+    <view
+        class="match-list"
+        wx:for="{{ matchData }}"
+        wx:key="date"
+        wx:for-item="item"
+    >
+      <view class="match-date">
+        {{ item.date }}
+      </view>
+      <view class="match-detail-wrapper">
+        <view
+            class="match-detail"
+            wx:for="{{ item.detail }}"
+            wx:key="name"
+            wx:for-item="point"
+        >
+<!--          <img-->
+<!--              class="crown-img"-->
+<!--              v-if="point === Object.values(item.detail).sort((a, b) => b - a)[0] && Object.values(item.detail).length === 4"-->
+<!--              src="./crown.png"-->
+<!--              height="16" width="16"-->
+<!--              alt="no.1"-->
+<!--          >-->
+          <text>{{ index }}</text> : <text class="{{ point > 0 ? 'last-rank-up' : point < 0 ? 'last-rank-down' : '' }}">{{ point }}</text>
+        </view>
+      </view>
     </view>
   </view>
 <!--  <view class="userinfo">-->

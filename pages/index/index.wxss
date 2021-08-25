@@ -92,3 +92,31 @@
 .rank-title {
   width: 25%;
 }
+
+.match {
+  width: 100%;
+  margin-top: 24rpx;
+}
+.match-date {
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 24rpx;
+  padding: 0 48rpx;
+  background-color: #f5f5f5;
+}
+.match-detail-wrapper {
+  height: 170rpx;
+  font-size: 24rpx;
+  padding: 0 96rpx;
+}
+.match-detail {
+  position: relative;
+  display: inline-block;
+  line-height: 80rpx;
+  width: 50%;
+}
+.crown-img {
+  position: absolute;
+  left: -36rpx;
+  top: 24rpx;
+}

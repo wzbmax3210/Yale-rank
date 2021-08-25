@@ -154,6 +154,30 @@ Page({
       ]
     }
   },
+  methods: {
+    titleMapHandle(rankPoint) {
+      switch (true) {
+        case rankPoint <= -1000:
+          return 'fish - 送神';
+        case rankPoint <= -600 && rankPoint > -1000:
+          return 'fish - 下层';
+        case rankPoint <= -300 && rankPoint > -600:
+          return 'fish - 口转脚';
+        case rankPoint <= -100 && rankPoint > -300:
+          return 'fish - 拔根';
+        case rankPoint < 100 && rankPoint > -100:
+          return '凡人';
+        case rankPoint >= 100 && rankPoint < 300:
+          return '筑根';
+        case rankPoint >= 300 && rankPoint < 600:
+          return '心转手';
+        case rankPoint >= 600 && rankPoint < 1000:
+          return '上层';
+        case rankPoint >= 1000:
+          return '鬼神';
+      }
+    }
+  },
   // 事件处理函数
   bindViewTap() {
     wx.navigateTo({
@@ -161,13 +185,18 @@ Page({
     })
   },
   onLoad() {
+    let resultRankData = this.data.testData.rank
     if (wx.getUserProfile) {
       this.setData({
         canIUseGetUserProfile: true
       })
     }
+    resultRankData.map(v => {
+      v.title = this.methods.titleMapHandle(v.rank)
+    })
     this.setData({
-      rankData: this.data.testData.rank.sort((a, b) => b.rank - a.rank)
+      rankData: resultRankData.sort((a, b) => b.rank - a.rank),
+      matchData: this.data.testData.match
     })
   },
   getUserProfile(e) {
