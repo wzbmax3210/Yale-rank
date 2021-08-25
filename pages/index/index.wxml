@@ -29,7 +29,7 @@
     <view
         class="match-list"
         wx:for="{{ matchData }}"
-        wx:key="date"
+        wx:key="_id"
         wx:for-item="item"
     >
       <view class="match-date">
