@@ -1,8 +1,10 @@
 <!--index.wxml-->
+<wxs module="tools" src="./../tools.wxs"></wxs>
 <view class="container">
   <view class="yale-header">
     <view>第一届</view>
     <view>{{motto}}</view>
+    <button bindtap="bindViewTap" class="update" size="mini" plain="true">更新</button>
   </view>
   <view class="yale-content">
     <view class="rank-wrapper title-color">
@@ -49,6 +51,14 @@
 <!--              height="16" width="16"-->
 <!--              alt="no.1"-->
 <!--          >-->
+<!--          <image-->
+<!--              wx:if="{{ getHighestPoint(item.detail) === point }}"-->
+<!--              class="crown-img"-->
+<!--              src="cloud://yale-rank-6g5isv7e4d2be45d.7961-yale-rank-6g5isv7e4d2be45d-1307133267/crown.png"-->
+<!--          ></image>-->
+          <view class="svg-wrapper" wx:if="{{ tools.getHighestPoint(item.detail) === point }}">
+            <text class="crown-img"></text>
+          </view>
           <text>{{ index }}</text> : <text class="{{ point > 0 ? 'last-rank-up' : point < 0 ? 'last-rank-down' : '' }}">{{ point }}</text>
         </view>
       </view>

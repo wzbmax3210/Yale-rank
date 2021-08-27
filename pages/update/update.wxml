@@ -1,6 +1,17 @@
 <!--update.wxml-->
 <view class="container log-list">
-  <block wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log.date}}</text>
-  </block>
+  <form style="width: 100%" catchsubmit="formSubmit" catchreset="formReset">
+    <view class="page-section" wx:for="{{ nameResult }}" wx:key="_id" wx:for-item="nameObj">
+      <view class="weui-cells__title">{{ nameObj.name }}</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" name="{{ nameObj['_id'] }}" type="number" />
+        </view>
+      </view>
+    </view>
+    <view class="btn-area">
+      <button style="margin: 30rpx 0" type="primary" formType="submit">Submit</button>
+      <button style="margin: 30rpx 0" formType="reset">Reset</button>
+    </view>
+  </form>
 </view>

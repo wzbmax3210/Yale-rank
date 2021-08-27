@@ -41,10 +41,10 @@ Page({
   // 事件处理函数
   bindViewTap() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../update/update'
     })
   },
-  onLoad() {
+  onShow() {
     wx.cloud.init()
     const db = wx.cloud.database()
     db.collection('rank')
@@ -68,6 +68,7 @@ Page({
       })
 
     db.collection('match')
+      .orderBy('date', 'desc')
       .get()
       .then(res => {
         this.setData({
