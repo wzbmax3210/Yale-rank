@@ -4,7 +4,7 @@
   <view class="yale-header">
     <view>第一届</view>
     <view>{{motto}}</view>
-    <button bindtap="bindViewTap" class="update" size="mini" plain="true">更新</button>
+    <button bindtap="bindViewTap" class="update-button" size="mini" plain="true">更新</button>
   </view>
   <view class="yale-content">
     <view class="rank-wrapper title-color">
