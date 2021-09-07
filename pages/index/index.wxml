@@ -40,6 +40,7 @@
       <view class="match-detail-wrapper">
         <view
             class="match-detail"
+            style="{{tools.objectKeys(item.detail).length > 4 ? 'width: 33%' : ''}}"
             wx:for="{{ item.detail }}"
             wx:key="name"
             wx:for-item="point"

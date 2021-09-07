@@ -30,5 +30,6 @@ function getHighestPoint(pointObj) {
 }
 
 module.exports = {
-  getHighestPoint: getHighestPoint
+  getHighestPoint: getHighestPoint,
+  objectKeys: objectKeys
 }
