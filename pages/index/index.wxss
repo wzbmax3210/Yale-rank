@@ -101,7 +101,19 @@
 .rank-title {
   width: 25%;
 }
-
+.fortune-god {
+  animation: self-animation 1s infinite;
+  animation-direction: alternate;
+  color: #FFD700;
+}
+@keyframes self-animation {
+  0% {
+    color: #FFD700;
+  }
+  100% {
+    color: #B8860B;
+  }
+}
 .match {
   width: 100%;
   margin-top: 24rpx;

@@ -18,7 +18,7 @@ Page({
     titleMapHandle(rankPoint) {
       switch (true) {
         case rankPoint <= -1000:
-          return 'fish - 送神';
+          return 'fish - 财神';
         case rankPoint <= -600 && rankPoint > -1000:
           return 'fish - 下层';
         case rankPoint <= -300 && rankPoint > -600:
