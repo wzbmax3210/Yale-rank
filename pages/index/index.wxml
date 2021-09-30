@@ -24,7 +24,7 @@
       <text class="rank-name">{{ item.name }}</text>
       <text class="rank-point {{ index === 0 ? 'top-1-color' : index === 1 ? 'top-2-color' : index === 2 ? 'top-3-color' : '' }}">{{ item.rank }}</text>
       <text class="rank-point {{ item.lastRank > 0 ? 'last-rank-up' : item.lastRank < 0 ? 'last-rank-down' : '' }}">{{ item.lastRank }}</text>
-      <text class="rank-title {{ item.title === 'fish - 财神' ? 'fortune-god' : ''}}" >{{ item.title }}</text>
+      <text class="rank-title {{ item.title === 'fish - 财神' ? 'fortune-god' : ''}} {{ item.title === '鬼神' ? 'mahjong-god' : ''}}" >{{ item.title }}</text>
     </view>
   </view>
   <view class="match">
@@ -64,6 +64,11 @@
         </view>
       </view>
     </view>
+    <view class="no-more-data" wx:if="{{ matchData.length !== 0 }}">
+      <view class="no-more-data-text">
+        暂无更多数据
+      </view>
+  </view>
   </view>
 <!--  <view class="userinfo">-->
 <!--    <block wx:if="{{canIUseOpenData}}">-->
