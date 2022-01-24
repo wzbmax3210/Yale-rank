@@ -5,7 +5,8 @@ const app = getApp()
 
 Page({
   data: {
-    motto: '雅乐争霸赛',
+    sessionTitle: 'YLL' + new Date().getFullYear() + '(YaLe League)',
+    motto: '雅乐争霸赛' + new Date().getFullYear(),
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),

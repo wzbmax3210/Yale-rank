@@ -148,7 +148,7 @@
 .match-detail-wrapper {
   height: 170rpx;
   font-size: 24rpx;
-  padding: 0 96rpx;
+  padding: 0 78rpx;
 }
 .match-detail {
   position: relative;
@@ -158,7 +158,7 @@
 }
 .crown-img {
   position: absolute;
-  left: -54rpx;
+  left: -50rpx;
   top: 18rpx;
   width: 48rpx;
   height: 48rpx;
