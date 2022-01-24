@@ -26,12 +26,12 @@
   padding: 20rpx 34rpx 30rpx;
   margin: 0;
   color: #ffffff;
-  background: #706CAA;
+  background: #f1cf4a;
   text-align: center;
 }
 .yale-header .update-button {
   position: absolute;
-  color: #706CAA;
+  color: #f1cf4a;
   width: 30rpx;
   height: 30rpx;
   right: 10rpx;

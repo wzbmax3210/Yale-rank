@@ -9,7 +9,7 @@ Page({
   },
   onLoad() {
     const db = wx.cloud.database()
-    db.collection('rank')
+    db.collection('rank' + new Date().getFullYear())
       .get()
       .then(res => {
         var tmpRankMap = {}
@@ -36,7 +36,7 @@ Page({
           matchDetail[this.data.nameMap[id]] = tmpRank
           const db = wx.cloud.database()
           const _ = db.command
-          db.collection('rank').doc(id)
+          db.collection('rank' + new Date().getFullYear()).doc(id)
             .update({
               data: {
                 lastRank: tmpRank,

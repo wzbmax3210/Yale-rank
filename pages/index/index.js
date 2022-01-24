@@ -6,7 +6,7 @@ const app = getApp()
 Page({
   data: {
     sessionTitle: 'YLL' + new Date().getFullYear() + '(YaLe League)',
-    motto: '雅乐争霸赛' + new Date().getFullYear(),
+    motto: '雅乐争霸赛',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -48,7 +48,7 @@ Page({
   onShow() {
     wx.cloud.init()
     const db = wx.cloud.database()
-    db.collection('rank')
+    db.collection('rank' + new Date().getFullYear())
       .field({
         _id: false,
         name: true,
@@ -73,7 +73,9 @@ Page({
       .get()
       .then(res => {
         this.setData({
-          matchData: res.data.map(v => {
+          matchData: res.data.filter(v => {
+            return new Date(v.date).getFullYear() === new Date().getFullYear()
+          }).map(v => {
             v.date = util.formatTime(v.date)
             return v
           })

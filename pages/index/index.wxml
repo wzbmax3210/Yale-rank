@@ -2,7 +2,7 @@
 <wxs module="tools" src="./../tools.wxs"></wxs>
 <view class="container">
   <view class="yale-header">
-    <view>第一届</view>
+    <view>{{sessionTitle}}</view>
     <view>{{motto}}</view>
     <button bindtap="bindViewTap" class="update-button" size="mini" plain="true">更新</button>
   </view>
