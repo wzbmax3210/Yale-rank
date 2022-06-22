@@ -138,12 +138,21 @@
   margin: 34rpx;
   box-shadow: 0 1px 3px #1a1a1a33;
 }
+.match-date-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
 .match-date {
   height: 72rpx;
   line-height: 72rpx;
   font-size: 26rpx;
   color: #333333;
-  padding: 0 48rpx;
+}
+.p-l-48 {
+  padding-left: 48rpx;
+}
+.p-r-48 {
+  padding-right: 48rpx;
 }
 .match-detail-wrapper {
   height: 170rpx;

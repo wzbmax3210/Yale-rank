@@ -29,8 +29,9 @@ Page({
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     var submitObj = e.detail.value
     var matchDetail = {}
+    var place = ''
     for (var id in submitObj) {
-      if (submitObj.hasOwnProperty(id)) {
+      if (submitObj.hasOwnProperty(id) && id !== 'place') {
         var tmpRank = parseInt(submitObj[id])
         if (!isNaN(tmpRank)) {
           matchDetail[this.data.nameMap[id]] = tmpRank
@@ -44,6 +45,8 @@ Page({
               }
             })
         }
+      } else if (id === 'place' && submitObj[id]) {
+        place = submitObj[id]
       }
     }
     if (JSON.stringify(matchDetail) !== '{}') {
@@ -51,7 +54,8 @@ Page({
       db.collection('match').add({
         data: {
           date: new Date(),
-          detail: matchDetail
+          detail: matchDetail,
+          place: place || ''
         }
       }).then(res => {
         wx.showToast({
@@ -65,7 +69,7 @@ Page({
       }).catch(console.error)
     } else {
       wx.showToast({
-        title: '参数不能全为空',
+        title: '战绩不能全为空',
         icon: 'none',
         duration: 2000
       })

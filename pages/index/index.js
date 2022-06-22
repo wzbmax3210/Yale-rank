@@ -77,6 +77,10 @@ Page({
             return new Date(v.date).getFullYear() === new Date().getFullYear()
           }).map(v => {
             v.date = util.formatTime(v.date)
+            v.clubExpense = 0
+            for (let i in v.detail) {
+              v.clubExpense -= v.detail[i]
+            }
             return v
           })
         })

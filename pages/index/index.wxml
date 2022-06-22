@@ -34,8 +34,9 @@
         wx:key="_id"
         wx:for-item="item"
     >
-      <view class="match-date">
-        {{ item.date }}
+      <view class="match-date-wrapper">
+        <view class="match-date p-l-48">{{ item.date }}</view>
+        <view class="match-date p-r-48">房费{{ item.clubExpense }} {{ item.place }}</view>
       </view>
       <view class="match-detail-wrapper">
         <view
