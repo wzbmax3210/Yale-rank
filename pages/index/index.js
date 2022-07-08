@@ -68,23 +68,16 @@ Page({
         })
       })
 
-    db.collection('match')
-      .orderBy('date', 'desc')
-      .get()
-      .then(res => {
+    wx.cloud.callFunction({
+      name: 'getNowYearMatch',
+      success: res => {
+        const resultData = res.result
         this.setData({
-          matchData: res.data.filter(v => {
-            return new Date(v.date).getFullYear() === new Date().getFullYear()
-          }).map(v => {
-            v.date = util.formatTime(v.date)
-            v.clubExpense = 0
-            for (let i in v.detail) {
-              v.clubExpense -= v.detail[i]
-            }
-            return v
-          })
+          matchData: resultData
         })
-      })
+      },
+      fail: console.error
+    })
 
     if (wx.getUserProfile) {
       this.setData({

@@ -50,23 +50,31 @@ Page({
       }
     }
     if (JSON.stringify(matchDetail) !== '{}') {
-      const db = wx.cloud.database()
-      db.collection('match').add({
-        data: {
-          date: new Date(),
-          detail: matchDetail,
-          place: place || ''
-        }
-      }).then(res => {
+      if (place === '') {
         wx.showToast({
-          title: '添加成功',
-          icon: 'success',
+          title: '战地不能为空',
+          icon: 'none',
           duration: 2000
         })
-        wx.navigateTo({
-          url: '../index/index'
-        })
-      }).catch(console.error)
+      } else {
+        const db = wx.cloud.database()
+        db.collection('match').add({
+          data: {
+            date: new Date(),
+            detail: matchDetail,
+            place: place || ''
+          }
+        }).then(res => {
+          wx.showToast({
+            title: '添加成功',
+            icon: 'success',
+            duration: 2000
+          })
+          wx.navigateTo({
+            url: '../index/index'
+          })
+        }).catch(console.error)
+      }
     } else {
       wx.showToast({
         title: '战绩不能全为空',
